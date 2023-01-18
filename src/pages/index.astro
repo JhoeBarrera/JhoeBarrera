@@ -1,4 +1,9 @@
 ---
+import "../styles/global.css";
+
+const pageTitle = "JhoelBarrera's Portfolio";
+const linkToGithub = "https://github.com/JhoeBarrera";
+const linkToLinkedin = "";
 ---
 
 <html lang="en">
@@ -7,13 +12,7 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Jhoel Barrera Portfolio</title>
-		<style>
-			body {
-				background-color: #16161a;
-				color: #fffffe;
-			}
-		</style>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<nav>
@@ -24,13 +23,70 @@
 				<li>Contacto</li>
 			</ul>
 		</nav>
+		<div><img src="/Icons/ArrowBack.svg" alt="" /></div>
 		<section>
-			<h1>Hola, soy Jhoel Barrera y este es mi primer sitio en Astro</h1>
-			<p>Diseñador UI y maquetador web</p>
 			<div>
-				<img src="/Icons/GitHub.svg" alt="" />
-				<img src="/Icons/LinkedIn.svg" alt="" />
+				<h1>Hola, soy Jhoel Barrera y este es mi primer sitio en Astro</h1>
+				<p>Diseñador UI y maquetador web</p>
+				<div>
+					<a href={linkToGithub} target="_blank"
+						><img src="/Icons/GitHub.svg" alt="GitHub icon" /></a
+					>
+					<a href={linkToLinkedin} target="_blank"
+						><img src="/Icons/LinkedIn.svg" alt="LinkedIn icon" /></a
+					>
+				</div>
 			</div>
+		</section>
+		<section>
+			<div>
+				<h2>Un poco sobre mí</h2>
+				<p>
+					Me llamo Jhoel Barrera, vengo de Lima-Perú. Tengo conocimientos en Maquetación Web y
+					Diseño UI/UX. Mi formación la vengo realizando de manera autodidacta aunque también
+					me apoyo en plataformas de educación en línea. Actualmente estoy buscando mi primera
+					experiencia laboral en Diseño Web, donde pueda aplicar todos mis conocimientos y
+					habilidades.
+				</p>
+				<div>
+					<img
+						src="/Illustration.svg"
+						alt="Illustration of a young man working on his desktop computer"
+					/>
+				</div>
+			</div>
+			<div>
+				<h2>Conocimientos en</h2>
+				<ul>
+					<li><img src="/Logos/HTML_icon.svg" alt="Html icon" /></li>
+					<li><img src="/Logos/CSS_icon.svg" alt="Css icon" /></li>
+					<li><img src="/Logos/SASS_icon.svg" alt="Sass icon" /></li>
+					<li><img src="/Logos/JS_icon.svg" alt="Js icon" /></li>
+					<li><img src="/Logos/GIT_icon.svg" alt="Git icon" /></li>
+					<li><img src="/Logos/FIGMA_icon.svg" alt="Figma icon" /></li>
+				</ul>
+			</div>
+		</section>
+		<section>
+			<h2>Mis proyectos</h2>
+		</section>
+		<section>
+			<h2>Contáctame</h2>
+			<p>
+				Te puedes comunicar conmigo mediante <a href={linkToLinkedin} target="_blank"
+					>LinkedIn</a
+				>. O través del siguiente formulario.
+			</p>
+			<form action="post">
+				<input type="email" id="email" name="email" placeholder="Correo electrónico" />
+				<textarea
+					id="message"
+					name="message"
+					cols="30"
+					rows="10"
+					placeholder="Deje su mensaje :)"></textarea>
+				<input type="submit" value="Enviar" />
+			</form>
 		</section>
 	</body>
 </html>
