@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import Navigation from "../components/navigation.astro";
+import Slider from "../components/slider.astro";
 
 const pageTitle = "JhoelBarrera's Portfolio";
 const linkToGithub = "https://github.com/JhoeBarrera";
@@ -12,81 +14,83 @@ const linkToLinkedin = "";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<nav>
-			<ul>
-				<li>Inicio</li>
-				<li>Sobre mi</li>
-				<li>Proyectos</li>
-				<li>Contacto</li>
-			</ul>
-		</nav>
-		<div><img src="/Icons/ArrowBack.svg" alt="" /></div>
-		<section>
-			<div>
-				<h1>Hola, soy Jhoel Barrera y este es mi primer sitio en Astro</h1>
-				<p>Diseñador UI y maquetador web</p>
-				<div>
-					<a href={linkToGithub} target="_blank"
-						><img src="/Icons/GitHub.svg" alt="GitHub icon" /></a
-					>
-					<a href={linkToLinkedin} target="_blank"
-						><img src="/Icons/LinkedIn.svg" alt="LinkedIn icon" /></a
-					>
+		<Navigation />
+		<!-- <div><img src="/Icons/ArrowBack.svg" alt="Arrow Down Icon" /></div> -->
+		<div class="container">
+			<section id="home" class="home">
+				<div class="home__container">
+					<h1 class="home__title">Hola, soy Jhoel Barrera</h1>
+					<p class="home__subtitle">Diseñador UI y Maquetador Web</p>
+					<div class="home__social">
+						<a href={linkToGithub} target="_blank"
+							><img src="/Icons/GitHub.svg" alt="GitHub icon" /></a
+						>
+						<a href={linkToLinkedin} target="_blank"
+							><img src="/Icons/LinkedIn.svg" alt="LinkedIn icon" /></a
+						>
+					</div>
 				</div>
-			</div>
-		</section>
-		<section>
-			<div>
-				<h2>Un poco sobre mí</h2>
-				<p>
-					Me llamo Jhoel Barrera, vengo de Lima-Perú. Tengo conocimientos en Maquetación Web y
-					Diseño UI/UX. Mi formación la vengo realizando de manera autodidacta aunque también
-					me apoyo en plataformas de educación en línea. Actualmente estoy buscando mi primera
-					experiencia laboral en Diseño Web, donde pueda aplicar todos mis conocimientos y
-					habilidades.
-				</p>
-				<div>
-					<img
-						src="/Illustration.svg"
-						alt="Illustration of a young man working on his desktop computer"
-					/>
+			</section>
+			<!-- <section id="aboutMe" class="aboutMe">
+				<div class="aboutMe__container">
+					<div class="aboutMe__information flex">
+						<div class="flex-item">
+							<h2 class="aboutMe__title">Un poco sobre mí</h2>
+							<p class="aboutMe__paragraph">
+								Me llamo Jhoel Barrera, vengo de Lima-Perú. Tengo conocimientos en Maquetación
+								Web y Diseño UI/UX. Mi formación la vengo realizando de manera autodidacta
+								aunque también me apoyo en plataformas de educación en línea. Actualmente estoy
+								buscando mi primera experiencia laboral en Diseño Web, donde pueda aplicar
+								todos mis conocimientos y habilidades.
+							</p>
+						</div>
+						<div class="flex-item aboutMe__image">
+							<img
+								src="/Illustration.svg"
+								alt="Illustration of a young man working on his desktop computer"
+							/>
+						</div>
+					</div>
+					<div class="aboutMe__knowledge">
+						<h2 class="aboutMe__title">Conocimientos en</h2>
+						<Slider />
+					</div>
 				</div>
-			</div>
-			<div>
-				<h2>Conocimientos en</h2>
-				<ul>
-					<li><img src="/Logos/HTML_icon.svg" alt="Html icon" /></li>
-					<li><img src="/Logos/CSS_icon.svg" alt="Css icon" /></li>
-					<li><img src="/Logos/SASS_icon.svg" alt="Sass icon" /></li>
-					<li><img src="/Logos/JS_icon.svg" alt="Js icon" /></li>
-					<li><img src="/Logos/GIT_icon.svg" alt="Git icon" /></li>
-					<li><img src="/Logos/FIGMA_icon.svg" alt="Figma icon" /></li>
-				</ul>
-			</div>
-		</section>
-		<section>
-			<h2>Mis proyectos</h2>
-		</section>
-		<section>
-			<h2>Contáctame</h2>
-			<p>
-				Te puedes comunicar conmigo mediante <a href={linkToLinkedin} target="_blank"
-					>LinkedIn</a
-				>. O través del siguiente formulario.
-			</p>
-			<form action="post">
-				<input type="email" id="email" name="email" placeholder="Correo electrónico" />
-				<textarea
-					id="message"
-					name="message"
-					cols="30"
-					rows="10"
-					placeholder="Deje su mensaje :)"></textarea>
-				<input type="submit" value="Enviar" />
-			</form>
-		</section>
+			</section> -->
+			<!-- <section id="projects" class="projects">
+				<div class="projects__container">
+					<h2>Mis proyectos</h2>
+				</div>
+			</section>
+			<section id="contactMe" class="contactMe">
+				<div class="contactMe__container">
+					<h2>Contáctame</h2>
+					<p>
+						Te puedes comunicar conmigo mediante <a href={linkToLinkedin} target="_blank"
+							>LinkedIn</a
+						>. O través del siguiente formulario.
+					</p>
+					<form action="post">
+						<input type="email" id="email" name="email" placeholder="Correo electrónico" />
+						<textarea
+							id="message"
+							name="message"
+							cols="30"
+							rows="10"
+							placeholder="Deje su mensaje :)"></textarea>
+						<input type="submit" value="Enviar" />
+					</form>
+				</div>
+			</section> -->
+		</div>
 	</body>
 </html>

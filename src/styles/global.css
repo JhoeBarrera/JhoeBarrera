@@ -2,12 +2,203 @@
 	box-sizing: border-box;
 }
 
+:root {
+	--color-gray: #72757e;
+	--color-gray-alt: #94a1b2;
+	--color-white: #fffffe;
+	--color-dark: #16161a;
+	--color-dark-alt: #242629;
+	--color-black: #010101;
+	--color-purple: #7f5af0;
+	--color-green: #2cb67d;
+
+	--radius: 4px;
+}
+
 html {
 	font-family: sans-serif;
+	scroll-behavior: smooth;
 }
 
 body {
-	background-color: #16161a;
-	color: #fffffe;
+	background-color: var(--color-dark);
+	color: var(--color-white);
 	margin: 0;
+	font-family: "DM Sans", sans-serif;
+} /* 
+.container {
+	overflow-y: scroll;
+	scroll-snap-type: y proximity;
+	max-height: 100vh;
+} */
+section {
+	scroll-snap-align: start;
+	min-height: 100vh;
+	position: relative;
+	padding-top: 0.0063rem;
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-green);
+}
+
+nav,
+ul {
+	margin: 0;
+}
+
+h1,
+h2,
+p {
+	margin: 0;
+}
+
+/* ##### containers ##### */
+
+.home,
+.aboutMe,
+.projects,
+.contactMe {
+	--color-debug: red;
+	--border-debug: 1px solid var(--color-debug);
+
+	display: flex;
+	border: var(--border-debug);
+	padding-inline: 1rem;
+}
+
+.aboutMe__container,
+.projects__container,
+.contactMe__container {
+	border: var(--border-debug);
+}
+
+/* ##### home ##### */
+.home {
+	--max-width: 444px;
+	--padding-container: 0;
+
+	justify-content: center;
+	align-items: center;
+}
+.home__container {
+	padding: var(--padding-container);
+	max-width: var(--max-width);
+}
+.home__title {
+	font-weight: bold;
+	font-size: 2.5em;
+}
+.home__subtitle {
+	margin-top: 1rem;
+	color: var(--color-green);
+	font-weight: bold;
+	font-size: 1.125em;
+}
+.home__social {
+	margin-top: 2rem;
+	display: flex;
+	justify-content: flex-start;
+	gap: 1rem;
+}
+
+/* ##### aboutMe ##### */
+.aboutMe {
+	--color-debug: lightpink;
+
+	justify-content: center;
+}
+.aboutMe__container {
+	margin-top: 10.25rem;
+	width: 100%;
+}
+.aboutMe__information,
+.aboutMe__knowledge {
+	border: var(--border-debug);
+	border-color: blue;
+}
+.aboutMe__knowledge {
+	margin-top: 4rem;
+}
+
+.aboutMe__container .flex {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5em;
+	justify-content: center;
+}
+.aboutMe__container .flex-item {
+	border: 1px solid lightgreen;
+}
+
+.aboutMe__title {
+	font-size: 1.75em;
+}
+.aboutMe__paragraph {
+	max-width: 549px;
+	margin-top: 32px;
+	font-size: 1em;
+	line-height: 1.4;
+	color: var(--color-gray-alt);
+}
+
+.aboutMe__information .aboutMe__knowledge {
+	display: none;
+}
+.aboutMe__knowledge {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+}
+.aboutMe__knowledge .aboutMe__title {
+	flex: 1;
+}
+
+@media (min-width: 474px) {
+	/* ##### home ##### */
+	.home {
+		--padding-container: 1rem;
+	}
+	.aboutMe__information {
+		padding: 1rem;
+	}
+}
+
+@media (min-width: 768px) {
+	/* ##### home ##### */
+	.home {
+		--max-width: 32.5rem;
+		font-size: 1.25rem;
+	}
+	.aboutMe {
+		font-size: 1.25rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	/* ##### home ##### */
+	.home {
+		--max-width: 42.5rem;
+	}
+	.home__container {
+		font-size: 1.5rem;
+	}
+
+	.aboutMe__container {
+		font-size: 1.25rem;
+	}
+	.aboutMe__container .flex-item {
+		flex: 1;
+	}
+	.aboutMe__image {
+		max-width: min-content;
+	}
+	.aboutMe__information .aboutMe__knowledge {
+		display: flex;
+	}
+	.aboutMe__knowledge {
+		display: none;
+	}
 }
