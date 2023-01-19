@@ -7,11 +7,10 @@
 	overflow: hidden;
 	margin-inline: auto;
 	width: 100%;
+	margin-top: 2rem;
 	max-width: calc(var(--slider-track-width) / 2);
-	border: 1px solid rgb(147, 255, 210);
 }
 .slider__track {
-	border: 1px solid hotpink;
 	list-style: none;
 	display: flex;
 	gap: var(--gap-elements);
@@ -34,5 +33,11 @@
 	}
 	100% {
 		transform: translateX(calc(-1 * calc(var(--slider-track-width) / 2)));
+	}
+}
+
+@media (min-width: 1024px) {
+	.slider {
+		margin-inline: 0;
 	}
 }
