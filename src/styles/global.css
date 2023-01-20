@@ -57,24 +57,35 @@ img {
 .aboutMe,
 .projects,
 .contactMe {
-	--color-debug: red;
-	--border-debug: 1px solid var(--color-debug);
-
 	display: flex;
-	border: var(--border-debug);
 	padding-inline: 1rem;
 }
 
-.projects__container,
+.contactMe {
+	--color-debug: red;
+	--border-debug: 1px solid var(--color-debug);
+	border: var(--border-debug);
+}
+
 .contactMe__container {
 	border: var(--border-debug);
 }
 
 /* ##### home ##### */
+#particles-js {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+}
+
 .home {
 	--max-width: 444px;
 	--padding-container: 0;
 
+	position: relative;
 	justify-content: center;
 	align-items: center;
 }
@@ -110,6 +121,7 @@ img {
 }
 .aboutMe__container {
 	margin-top: var(--margin-top);
+	margin-bottom: calc(var(--margin-top) / 2);
 	width: 100%;
 	max-width: var(--max-width);
 }
@@ -140,6 +152,49 @@ img {
 	display: none;
 }
 
+/* ##### projects ##### */
+.projects {
+	--max-width: 520px;
+	--padding-container: 0;
+
+	justify-content: center;
+	align-items: flex-start;
+}
+.projects__container {
+	margin-top: var(--margin-top);
+	margin-bottom: calc(var(--margin-top) / 2);
+	width: 100%;
+	max-width: var(--max-width);
+}
+.projects__title {
+	font-size: 1.75em;
+}
+.projects__flex {
+	margin-top: 2rem;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
+/* ##### contactMe ##### */
+.contactMe {
+	--max-width: 520px;
+	--padding-container: 0;
+
+	justify-content: center;
+	align-items: flex-start;
+}
+.contactMe__container {
+	margin-top: var(--margin-top);
+	margin-bottom: calc(var(--margin-top) / 2);
+	width: 100%;
+	max-width: var(--max-width);
+}
+.contactMe__title {
+	font-size: 1.75em;
+}
+
 @media (min-width: 474px) {
 	/* ##### home ##### */
 	.home {
@@ -151,6 +206,16 @@ img {
 	.aboutMe__knowledge {
 		--padding-container: 1rem;
 	}
+
+	/* ##### projects ##### */
+	.projects {
+		--padding-container: 1rem;
+	}
+
+	/* ##### contactMe ##### */
+	.contactMe__container {
+		--padding-container: 1rem;
+	}
 }
 
 @media (min-width: 768px) {
@@ -159,7 +224,18 @@ img {
 		--max-width: 32.5rem;
 		font-size: 1.25rem;
 	}
+	/* ##### aboutMe ##### */
 	.aboutMe {
+		--max-width: 42.5rem;
+		font-size: 1.25rem;
+	}
+	/* ##### projects ##### */
+	.projects {
+		--max-width: 42.5rem;
+		font-size: 1.25rem;
+	}
+	/* ##### contactMe ##### */
+	.contactMe {
 		--max-width: 42.5rem;
 		font-size: 1.25rem;
 	}
@@ -190,5 +266,15 @@ img {
 	}
 	.aboutMe__subtitle {
 		font-size: 1.3em;
+	}
+	/* ##### projects ##### */
+	.projects {
+		--max-width: 57.5rem;
+		font-size: 1.25rem;
+	}
+	/* ##### contactMe ##### */
+	.contactMe {
+		--max-width: 57.5rem;
+		font-size: 1.25rem;
 	}
 }

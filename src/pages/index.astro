@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Navigation from "../components/navigation.astro";
 import Slider from "../components/slider.astro";
+import ProjectCard from "../components/projectCard.astro";
 
 const pageTitle = "JhoelBarrera's Portfolio";
 const linkToGithub = "https://github.com/JhoeBarrera";
@@ -27,7 +28,8 @@ const linkToLinkedin = "";
 		<!-- <div><img src="/Icons/ArrowBack.svg" alt="Arrow Down Icon" /></div> -->
 		<div class="container">
 			<section id="home" class="home">
-				<div class="home__container">
+				<div id="particles-js"></div>
+				<div>
 					<h1 class="home__title">Hola, soy Jhoel Barrera</h1>
 					<p class="home__subtitle">Diseñador UI y Maquetador Web</p>
 					<div class="home__social">
@@ -70,18 +72,52 @@ const linkToLinkedin = "";
 					</div>
 				</div>
 			</section>
-			<!-- <section id="projects" class="projects">
+			<section id="projects" class="projects">
 				<div class="projects__container">
-					<h2>Mis proyectos</h2>
+					<h2 class="projects__title">Mis proyectos</h2>
+					<div class="projects__flex">
+						<ProjectCard
+							imgUrl=""
+							imgDescription="Screenshoot de la aplicación Pakay"
+							title="Pakay App"
+							type="Diseño UI/UX"
+							url=""
+							source=""
+						/>
+						<ProjectCard
+							imgUrl=""
+							imgDescription="Screenshoot de la aplicación Pakay"
+							title="Pakay App"
+							type="JavaScript"
+							url=""
+							source=""
+						/>
+						<ProjectCard
+							imgUrl=""
+							imgDescription="Screenshoot de la aplicación Pakay"
+							title="Pakay App"
+							type="HTML/CSS"
+							url=""
+							source=""
+						/>
+						<ProjectCard
+							imgUrl=""
+							imgDescription="Screenshoot de la aplicación Pakay"
+							title="Pakay App"
+							type="HTML/CSS"
+							url=""
+							source=""
+						/>
+					</div>
 				</div>
 			</section>
 			<section id="contactMe" class="contactMe">
 				<div class="contactMe__container">
-					<h2>Contáctame</h2>
-					<p>
+					<h2 class="contactMe__title">Contáctame</h2>
+					<p class="contactMe__paragraph">
 						Te puedes comunicar conmigo mediante <a href={linkToLinkedin} target="_blank"
 							>LinkedIn</a
-						>. O través del siguiente formulario.
+						> o a través del siguiente formulario.
 					</p>
 					<form action="post">
 						<input type="email" id="email" name="email" placeholder="Correo electrónico" />
@@ -94,7 +130,16 @@ const linkToLinkedin = "";
 						<input type="submit" value="Enviar" />
 					</form>
 				</div>
-			</section> -->
+			</section>
 		</div>
+		<script is:inline src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
+		></script>
+		<script>
+			window.addEventListener("DOMContentLoaded", () => {
+				particlesJS.load("particles-js", "src/scripts/particlesjs-config.json", function () {
+					console.log("particles.json loaded...");
+				});
+			});
+		</script>
 	</body>
 </html>
