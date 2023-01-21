@@ -1,0 +1,27 @@
+---
+import "../styles/form.css";
+---
+
+<form action="post" class="form">
+	<div class="form__input form__input-email">
+		<input type="email" id="email" name="email" autocomplete="off" class="form__email" />
+		<label for="email" class="form__label form__email-label">Correo electrónico</label>
+	</div>
+	<div class="form__input form__input-message">
+		<textarea id="message" name="message" cols="30" rows="10" class="form__message"></textarea>
+		<label for="message" class="form__label form__message-label">Deje su mensaje :)</label>
+	</div>
+	<input type="submit" value="Enviar" class="form__button" />
+</form>
+
+<script>
+	function activateInput(obj, txt) {
+		obj.classList.toggle(`${txt}--active`);
+	}
+	document.querySelector(".form__email").addEventListener("click", () => {
+		activateInput(document.querySelector(".form__input-email"), "form__input-email");
+	});
+	document.querySelector(".form__message").addEventListener("click", () => {
+		activateInput(document.querySelector(".form__input-message"), "form__input-message");
+	});
+</script>

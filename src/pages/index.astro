@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Navigation from "../components/navigation.astro";
 import Slider from "../components/slider.astro";
 import ProjectCard from "../components/projectCard.astro";
+import Form from "../components/form.astro";
 
 const pageTitle = "JhoelBarrera's Portfolio";
 const linkToGithub = "https://github.com/JhoeBarrera";
@@ -119,20 +120,11 @@ const linkToLinkedin = "";
 							>LinkedIn</a
 						> o a través del siguiente formulario.
 					</p>
-					<form action="post">
-						<input type="email" id="email" name="email" placeholder="Correo electrónico" />
-						<textarea
-							id="message"
-							name="message"
-							cols="30"
-							rows="10"
-							placeholder="Deje su mensaje :)"></textarea>
-						<input type="submit" value="Enviar" />
-					</form>
+					<Form />
 				</div>
 			</section>
 		</div>
-		<script is:inline src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
+		<!-- <script is:inline src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
 		></script>
 		<script>
 			window.addEventListener("DOMContentLoaded", () => {
@@ -140,6 +132,6 @@ const linkToLinkedin = "";
 					console.log("particles.json loaded...");
 				});
 			});
-		</script>
+		</script> -->
 	</body>
 </html>
