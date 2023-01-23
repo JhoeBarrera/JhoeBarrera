@@ -2,26 +2,40 @@
 import "../styles/form.css";
 ---
 
-<form action="post" class="form">
-	<div class="form__input form__input-email">
-		<input type="email" id="email" name="email" autocomplete="off" class="form__email" />
-		<label for="email" class="form__label form__email-label">Correo electrónico</label>
+<form action="#" class="form">
+	<div class="input-container">
+		<div class="input-item">
+			<label for="email" class="form__label">Correo electrónico</label>
+			<input type="text" id="email" autocomplete="off" class="form__email" />
+		</div>
 	</div>
-	<div class="form__input form__input-message">
-		<textarea id="message" name="message" cols="30" rows="10" class="form__message"></textarea>
-		<label for="message" class="form__label form__message-label">Deje su mensaje :)</label>
+	<div class="textarea-container">
+		<div class="textarea-item" class:list="form__label">
+			<label for="message" class="form__label">Deje su mensaje</label>
+			<textarea id="message" class="form__message"></textarea>
+		</div>
 	</div>
 	<input type="submit" value="Enviar" class="form__button" />
 </form>
 
 <script>
-	function activateInput(obj, txt) {
-		obj.classList.toggle(`${txt}--active`);
-	}
-	document.querySelector(".form__email").addEventListener("click", () => {
-		activateInput(document.querySelector(".form__input-email"), "form__input-email");
+	const inputContainer = document.querySelector(".input-container");
+	const inputEmail = document.querySelector(".form__email");
+
+	const textareaContainer = document.querySelector(".textarea-container");
+	const textarea = document.querySelector(".form__message");
+
+	inputEmail.addEventListener("click", () => {
+		inputContainer.classList.toggle("input-container--active");
+		if (inputContainer.classList.length === 1) {
+			inputEmail.blur();
+		}
 	});
-	document.querySelector(".form__message").addEventListener("click", () => {
-		activateInput(document.querySelector(".form__input-message"), "form__input-message");
+
+	textarea.addEventListener("click", () => {
+		textareaContainer.classList.toggle("textarea-container--active");
+		if (textareaContainer.classList.length === 1) {
+			textarea.blur();
+		}
 	});
 </script>

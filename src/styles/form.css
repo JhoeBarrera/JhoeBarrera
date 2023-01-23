@@ -1,23 +1,4 @@
-input,
-textarea {
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-	border: 0;
-	outline: 0;
-}
-textarea {
-	resize: none;
-}
-.form {
-	--message-height: 6.25rem;
-	--email-height: 3.25rem;
-	--padding-input: 1rem;
-
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-}
+/* 
 .form__input {
 	flex: 1;
 	position: relative;
@@ -64,6 +45,142 @@ textarea {
 .form__message {
 	height: 100px;
 }
+.form__button {
+	border: 0;
+	border-radius: var(--radius);
+	background-color: var(--color-green);
+	padding: 1rem;
+	font-size: 1.125rem;
+	color: var(--color-white);
+	cursor: pointer;
+}
+ */
+
+input,
+textarea {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-sizing: border-box;
+	box-shadow: none;
+	border: 0;
+	outline: 0;
+}
+textarea {
+	resize: none;
+}
+
+.form {
+	--line-height: 1.4;
+	--font-size: 1em;
+
+	--label-height: calc(var(--line-height) * var(--font-size));
+	--gap: 16px;
+	--input-height: 2.25rem;
+	--textarea-height: calc(var(--input-height) * 2);
+
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.form__email,
+.form__message {
+	background-color: transparent;
+	border: 2px solid var(--color-gray);
+	border-radius: var(--radius);
+	color: var(--color-white);
+	font-size: 1em;
+	caret-color: transparent;
+}
+.form__email:focus,
+.form__message:focus {
+	border-color: var(--color-black);
+	caret-color: var(--color-green);
+}
+.form__label {
+	color: var(--color-gray-alt);
+}
+
+/* ##### email ##### */
+.input-container {
+}
+.input-item {
+	display: flex;
+	align-items: center;
+	gap: var(--gap);
+	position: relative;
+	min-height: var(--input-height);
+	transition: min-height 0.5s ease-in-out;
+}
+.input-item input {
+	flex: 1;
+	font-size: var(--font-size);
+	min-height: var(--input-height);
+	padding-inline: 1rem;
+}
+.input-item label {
+	position: absolute;
+	top: calc(var(--input-height) / 2);
+	transform: translateY(-50%);
+	left: 1rem;
+	transition: top 0.5s ease-in-out, left 0.5s ease-in-out;
+}
+.input-item label:hover {
+	cursor: text;
+}
+.input-container--active:focus-within .input-item {
+	min-height: calc(var(--label-height) + var(--gap) + var(--input-height));
+}
+.input-container--active:focus-within .input-item input {
+	align-self: flex-end;
+}
+.input-container--active:focus-within .input-item label {
+	top: 0;
+	transform: none;
+	left: 0;
+}
+
+/* ##### textarea ##### */
+.textarea-container {
+}
+.textarea-item {
+	display: flex;
+	align-items: center;
+	gap: var(--gap);
+	position: relative;
+	min-height: var(--textarea-height);
+	transition: min-height 0.5s ease-in-out;
+}
+.textarea-item textarea {
+	flex: 1;
+	resize: none;
+	min-height: var(--textarea-height);
+	font-size: var(--font-size);
+	padding-inline: 1rem;
+	padding-top: 0.5rem;
+}
+.textarea-item label {
+	position: absolute;
+	top: calc(var(--input-height) / 2);
+	transform: translateY(-50%);
+	left: 1rem;
+	transition: top 0.5s ease-in-out, left 0.5s ease-in-out;
+}
+.textarea-item label:hover {
+	cursor: text;
+}
+.textarea-container--active:focus-within .textarea-item {
+	min-height: calc(var(--label-height) + var(--gap) + var(--textarea-height));
+}
+.textarea-container--active:focus-within .textarea-item textarea {
+	align-self: flex-end;
+}
+.textarea-container--active:focus-within .textarea-item label {
+	top: 0;
+	transform: none;
+	left: 0;
+}
+
+/* ##### button ##### */
 .form__button {
 	border: 0;
 	border-radius: var(--radius);
