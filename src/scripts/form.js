@@ -28,6 +28,7 @@ inputEmail.addEventListener("click", () => {
 		deactivateInputContainer();
 		inputEmail.blur();
 	}
+	currentTextareaClick = 0;
 });
 
 textarea.addEventListener("click", () => {
@@ -38,6 +39,7 @@ textarea.addEventListener("click", () => {
 		deactivateTextareaContainer();
 		textarea.blur();
 	}
+	currentInputClick = 0;
 });
 
 document.documentElement.addEventListener("click", (e) => {
