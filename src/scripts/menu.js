@@ -1,7 +1,7 @@
 const sections = document.querySelectorAll("section");
-const menuItems = document.querySelectorAll(".menu__item"); /* navLi */
+const menuItems = document.querySelectorAll(".menu__item");
 
-window.addEventListener("scroll", () => {
+function scrollingMenu() {
 	let current = "";
 	sections.forEach((section) => {
 		const sectionTop = section.offsetTop;
@@ -17,6 +17,7 @@ window.addEventListener("scroll", () => {
 			li.classList.add("menu__item--focus");
 		}
 	});
-});
+}
 
-console.log(sections, menuItems);
+window.addEventListener("DOMContentLoaded", scrollingMenu);
+window.addEventListener("scroll", scrollingMenu);
