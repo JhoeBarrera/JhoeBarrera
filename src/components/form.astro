@@ -6,29 +6,36 @@ import "../styles/form.css";
 	<div class="input-container">
 		<div class="input-item">
 			<label for="email" class="form__label">Correo electrónico</label>
-			<input type="text" id="email" autocomplete="off" class="form__email" />
+			<input type="text" id="email" autocomplete="off" required class="form__email" />
 		</div>
 	</div>
 	<div class="textarea-container">
 		<div class="textarea-item" class:list="form__label">
 			<label for="message" class="form__label">Deje su mensaje</label>
-			<textarea id="message" class="form__message"></textarea>
+			<textarea id="message" required class="form__message"></textarea>
 		</div>
 	</div>
 	<input type="submit" value="Enviar" class="form__button" />
 </form>
 
 <script>
-	const inputContainer = document.querySelector(".input-container");
-	const inputEmail = document.querySelector(".form__email");
+	const inputContainer = document.querySelector<HTMLElement>(".input-container");
+	const inputEmail = document.querySelector(".form__email") as HTMLInputElement;
 
-	const textareaContainer = document.querySelector(".textarea-container");
-	const textarea = document.querySelector(".form__message");
+	const textareaContainer = document.querySelector<HTMLElement>(".textarea-container");
+	const textarea = document.querySelector<HTMLElement>(".form__message");
+
+	console.log(inputEmail);
 
 	inputEmail.addEventListener("click", () => {
 		inputContainer.classList.toggle("input-container--active");
 		if (inputContainer.classList.length === 1) {
 			inputEmail.blur();
+		}
+		if (inputEmail.value === "") {
+			console.log("vacío");
+			const previousElementSibling = inputEmail.previousElementSibling as HTMLElement;
+			previousElementSibling.style.opacity = "0";
 		}
 	});
 
