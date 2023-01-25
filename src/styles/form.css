@@ -43,8 +43,6 @@ textarea {
 }
 
 /* ##### email ##### */
-.input-container {
-}
 .input-item {
 	display: flex;
 	align-items: center;
@@ -69,21 +67,21 @@ textarea {
 .input-item label:hover {
 	cursor: text;
 }
-.input-container--active:focus-within .input-item {
+.input-container--active .input-item {
 	min-height: calc(var(--label-height) + var(--gap) + var(--input-height));
 }
-.input-container--active:focus-within .input-item input {
+.input-container--active .input-item input {
 	align-self: flex-end;
+	border-color: var(--color-black);
 }
-.input-container--active:focus-within .input-item label {
+.input-container--active .input-item label {
 	top: 0;
 	transform: none;
 	left: 0;
 }
 
 /* ##### textarea ##### */
-.textarea-container {
-}
+
 .textarea-item {
 	display: flex;
 	align-items: center;
@@ -110,13 +108,15 @@ textarea {
 .textarea-item label:hover {
 	cursor: text;
 }
-.textarea-container--active:focus-within .textarea-item {
+.textarea-container--active .textarea-item {
 	min-height: calc(var(--label-height) + var(--gap) + var(--textarea-height));
 }
-.textarea-container--active:focus-within .textarea-item textarea {
+.textarea-container--active .textarea-item textarea {
 	align-self: flex-end;
+	font-family: "DM Sans", sans-serif;
+	border-color: var(--color-black);
 }
-.textarea-container--active:focus-within .textarea-item label {
+.textarea-container--active .textarea-item label {
 	top: 0;
 	transform: none;
 	left: 0;

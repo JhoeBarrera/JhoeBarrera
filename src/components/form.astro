@@ -18,31 +18,4 @@ import "../styles/form.css";
 	<input type="submit" value="Enviar" class="form__button" />
 </form>
 
-<script>
-	const inputContainer = document.querySelector<HTMLElement>(".input-container");
-	const inputEmail = document.querySelector(".form__email") as HTMLInputElement;
-
-	const textareaContainer = document.querySelector<HTMLElement>(".textarea-container");
-	const textarea = document.querySelector<HTMLElement>(".form__message");
-
-	console.log(inputEmail);
-
-	inputEmail.addEventListener("click", () => {
-		inputContainer.classList.toggle("input-container--active");
-		if (inputContainer.classList.length === 1) {
-			inputEmail.blur();
-		}
-		if (inputEmail.value === "") {
-			console.log("vacío");
-			const previousElementSibling = inputEmail.previousElementSibling as HTMLElement;
-			previousElementSibling.style.opacity = "0";
-		}
-	});
-
-	textarea.addEventListener("click", () => {
-		textareaContainer.classList.toggle("textarea-container--active");
-		if (textareaContainer.classList.length === 1) {
-			textarea.blur();
-		}
-	});
-</script>
+<script src="../scripts/form.js"></script>
