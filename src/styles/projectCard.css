@@ -1,5 +1,5 @@
 .projectCard {
-	flex: 0 1 max-content;
+	flex: 0 1 390px;
 	background-color: var(--color-dark-alt);
 	padding: 1rem;
 	border-radius: var(--radius);
@@ -11,6 +11,11 @@
 	width: 100%;
 	height: 13.125rem;
 	background-color: var(--color-purple);
+}
+.projectCard__image img {
+	max-width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 .projectCard__title {
 	font-size: 1.125em;
