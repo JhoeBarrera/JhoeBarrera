@@ -56,9 +56,25 @@ img {
 section.home,
 section.aboutMe,
 section.projects,
-section.contactMe {
+section.contactMe,
+section.thankYou {
 	display: flex;
 	padding-inline: 1rem;
+}
+
+section.thankYou {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+}
+.thankYou__title {
+	font-size: 1.75em;
+}
+.thankYou__paragraph {
+	font-size: 1em;
+	line-height: 1.4;
+	color: var(--color-gray-alt);
 }
 
 /* ##### home ##### */
@@ -217,20 +233,21 @@ section.contactMe {
 	/* ##### home ##### */
 	section.home {
 		--max-width: 32.5rem;
-		font-size: 1.25rem;
 	}
 	/* ##### aboutMe ##### */
 	section.aboutMe {
 		--max-width: 42.5rem;
-		font-size: 1.25rem;
 	}
 	/* ##### projects ##### */
 	section.projects {
 		--max-width: 42.5rem;
-		font-size: 1.25rem;
 	}
 	/* ##### contactMe ##### */
-	section.contactMe {
+	section.home,
+	section.aboutMe,
+	section.projects,
+	section.contactMe,
+	section.thankYou {
 		/* --max-width: 42.5rem; */
 		font-size: 1.25rem;
 	}

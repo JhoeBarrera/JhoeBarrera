@@ -2,19 +2,27 @@
 import "../styles/form.css";
 ---
 
-<form action="#" class="form">
+<form method="POST" action="https://formsubmit.co/jhoebarrera05@outlook.com" class="form">
 	<div class="input-container">
 		<div class="input-item">
 			<label for="email" class="form__label">Correo electrónico</label>
-			<input type="text" id="email" autocomplete="off" required class="form__email" />
+			<input
+				type="text"
+				id="email"
+				name="email"
+				autocomplete="off"
+				required
+				class="form__email"
+			/>
 		</div>
 	</div>
 	<div class="textarea-container">
 		<div class="textarea-item" class:list="form__label">
 			<label for="message" class="form__label">Deje su mensaje</label>
-			<textarea id="message" required class="form__message"></textarea>
+			<textarea id="message" name="message" required class="form__message"></textarea>
 		</div>
 	</div>
+	<input type="hidden" name="_next" value="https://jhoelbarrera.netlify.app/thankYou" />
 	<input type="submit" value="Enviar" class="form__button" />
 </form>
 
